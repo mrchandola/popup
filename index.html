@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Forty by HTML5 UP</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+
+</head>
+<body>
+
+<div class="full_bg_screen" id="popupScreen">
+	<div class="popup_modal">
+		<span class="close_btn"><img src="images/close.svg" alt=""></span>
+		<div class="popup_body">
+			<div class="login_form_left">
+				<div class="title-text">
+					<h3>Get $10 off when you sign up for</h3>
+					<p>Saving, News, Updates and more</p>
+				</div>
+				<div class="login_form">
+					<form name="signup" id="formSubmit" method="post">
+						<div class="login_input">
+							<input type="text" name="yourname" class="input_field" placeholder="Your Name">
+						</div>
+						<div class="login_input">
+							<input type="email" name="emailaddress" id="emailaddress" class="input_field" placeholder="Email Address">
+						</div>
+						<div class="check_box">
+							<input type="checkbox" name="checkbox" id="checkboxID" >
+							<span>Check this box to receive monthly newsletter.</span>
+						</div>
+						<div class="btn">
+							<button type="submit" class="signup_btn" id="submit">Sign Up</button>
+							<a href="#" class="privacy_policy">Privacy Policy</a>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="offer_img_right">
+				<img src="images/offer-img.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+
+if (screen.width < 768) {
+	setTimeout(function(){
+		document.getElementById('popupScreen').style.display='none'
+	}, 5000);
+}
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+
+ $(document).ready(function() {
+
+   $('#formSubmit').validate({
+     rules: {
+       
+       'emailaddress': {
+         required: true,
+         minlength: 2
+       },	   
+	   'checkbox': { 
+            required : true
+             
+          }
+     },
+     messages: {      
+       'emailaddress': "Please enter your email address.",
+	   'checkbox': "Please check this box."
+     },
+   });
+ });
+
+
+document.cookie = "yourname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
